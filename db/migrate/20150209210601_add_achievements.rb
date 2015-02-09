@@ -8,7 +8,6 @@ class AddAchievements < ActiveRecord::Migration
       t.timestamps null: false
     end
     
-    drop_table :grades
   end
 
 end
