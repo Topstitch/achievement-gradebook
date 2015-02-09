@@ -9,10 +9,19 @@ Rails.application.routes.draw do
   post 'login/changepassword'
   get 'login/changepassword'
 
-  
+
   resources :parents
   resources :teachers
-  resources :students
+
+
+  resources :students do
+    member do
+      get 'edit_achievements'
+      post 'edit_achievements'
+      post 'update_achievements'
+    end
+  end
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.
