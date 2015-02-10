@@ -5,11 +5,16 @@
     <aside>
     <tr><td>
       <% student = Student.find_by_id(session[:student_id]) %>
-      <%= student.name %></td></tr>
+      <span><%= student.name %>'s Achievements</span></td></tr>
     </aside>
     <article>
     <tr>
-        
+      <% student.achievements.all.each do |achievement| %>
+          <tr>
+            <td><%= achievement.description %></td>
+            <td><%= achievement.points %> points</td>
+          </tr>
+        <% end %>
     </tr>
   </article>
   </tbody>
