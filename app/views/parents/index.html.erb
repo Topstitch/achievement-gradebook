@@ -1,15 +1,25 @@
 <h1>Parent Dashboard</h1>
 
-
+<section>
 <table>
   <tbody>
+    <aside>
     <tr><td>
       <% parent = Parent.find_by_id(session[:parent_id]) %>
-      <%= parent.child_name %></td></tr>
+      <span><%= parent.child_name %>'s Achievements</span></td></tr>
+    </aside>
+    <article>
+    <tr>
       <% student = Student.find_by(name: parent.child_name ) %>
-      
-    </tr>
+      <% student.achievements.all.each do |achievement| %>
+          <tr>
+            <td><%= achievement.description %></td>
+            <td><%= achievement.points %> points</td>
+          </tr>
+        <% end %>
+      </tr>
+  </article>
   </tbody>
 </table>
-
+</section>
 <%= link_to 'Change your password', edit_parent_path(Parent.find_by(id: session[:parent_id] )) %>
