@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
   end
 
   def edit_achievements
-    @achievements = Achievement.all
+    @achievements = @student.teacher.achievements
   end
 
   # POST

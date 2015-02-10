@@ -1,6 +1,8 @@
 class Teacher < ActiveRecord::Base
   has_secure_password
 
+  has_many :achievements
+
   def self.classes
     classes = []
 
