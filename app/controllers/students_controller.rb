@@ -22,8 +22,9 @@ class StudentsController < ApplicationController
     params[:achievements].keys.each do |achievement_id|
       @student.achievements << Achievement.find_by_id(achievement_id)
     end
-    redirect_to student_path
+    redirect_to teachers_path
   end
+
 
   def create
     @student = Student.new(student_params)

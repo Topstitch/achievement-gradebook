@@ -6,9 +6,11 @@
       <li>
         <%= check_box_tag "achievements[#{t.id}]", true, @student.achievements.include?(t) %>
         <%= t.description %>
+        <%= t.points %>
       </li>
     <% end %>
   </ul>
 
   <%= submit_tag "Save Achievements" %>
 <% end %>
+<%= link_to 'Back', teachers_path %>
