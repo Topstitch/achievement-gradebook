@@ -14,6 +14,8 @@
             </tr>
           <% end %>
         </tr>
+      <tr id = "total"><td><%=  student.name  %>'s total achievement points are <%= student.achievements.sum(:points) %>, out of a total possible <%= student.teacher.achievements.sum(:points) %>, for a current grade of Z.</td>
+      </tr>
       <% end %>
   </tbody>
 </table>
